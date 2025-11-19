@@ -339,6 +339,7 @@ set (GLOG_PUBLIC_H
   ${CMAKE_CURRENT_BINARY_DIR}/glog/stl_logging.h
   ${CMAKE_CURRENT_BINARY_DIR}/glog/vlog_is_on.h
   src/glog/log_severity.h
+  src/glog/file_pack.h
 )
 
 set (GLOG_SRCS
@@ -355,6 +356,7 @@ set (GLOG_SRCS
   src/utilities.cc
   src/utilities.h
   src/vlog_is_on.cc
+  src/file_pack.cc
 )
 
 if (HAVE_PTHREAD)

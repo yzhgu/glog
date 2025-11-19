@@ -772,7 +772,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src
 AM_CXXFLAGS = $(am__append_1) $(am__append_2) $(am__append_3) \
 	$(am__append_4)
 glogincludedir = $(includedir)/glog
-gloginclude_HEADERS = src/glog/log_severity.h
+gloginclude_HEADERS = src/glog/log_severity.h src/glog/file_pack.h
 nodist_gloginclude_HEADERS = src/glog/logging.h src/glog/raw_logging.h src/glog/vlog_is_on.h src/glog/stl_logging.h
 noinst_HEADERS = src/glog/logging.h.in src/glog/raw_logging.h.in src/glog/vlog_is_on.h.in src/glog/stl_logging.h.in
 dist_doc_DATA = AUTHORS COPYING ChangeLog INSTALL NEWS README README.windows \
@@ -889,7 +889,8 @@ libglog_la_SOURCES = $(gloginclude_HEADERS) \
                        src/symbolize.cc src/symbolize.h \
                        src/signalhandler.cc \
                        src/base/mutex.h src/base/googleinit.h \
-                       src/base/commandlineflags.h src/googletest.h
+                       src/base/commandlineflags.h src/googletest.h \
+                       src/file_pack.cc
 
 nodist_libglog_la_SOURCES = $(nodist_gloginclude_HEADERS)
 libglog_la_CXXFLAGS = $(PTRHEAD_CFLAGS) $(GFLAGS_CFLAGS) $(MINGW_CFLAGS) \

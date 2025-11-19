@@ -36,7 +36,7 @@ glogincludedir = $(includedir)/glog
 ## who install this package can include in their own applications.)
 ## We have to include both the .h and .h.in forms.  The latter we
 ## put in noinst_HEADERS.
-gloginclude_HEADERS = src/glog/log_severity.h
+gloginclude_HEADERS = src/glog/log_severity.h src/glog/file_pack.h
 nodist_gloginclude_HEADERS = src/glog/logging.h src/glog/raw_logging.h src/glog/vlog_is_on.h src/glog/stl_logging.h
 noinst_HEADERS = src/glog/logging.h.in src/glog/raw_logging.h.in src/glog/vlog_is_on.h.in src/glog/stl_logging.h.in
 
@@ -195,7 +195,8 @@ libglog_la_SOURCES = $(gloginclude_HEADERS) \
                        src/symbolize.cc src/symbolize.h \
                        src/signalhandler.cc \
                        src/base/mutex.h src/base/googleinit.h \
-                       src/base/commandlineflags.h src/googletest.h
+                       src/base/commandlineflags.h src/googletest.h \
+                       src/file_pack.cc
 nodist_libglog_la_SOURCES = $(nodist_gloginclude_HEADERS)
 
 libglog_la_CXXFLAGS = $(PTRHEAD_CFLAGS) $(GFLAGS_CFLAGS) $(MINGW_CFLAGS) \
